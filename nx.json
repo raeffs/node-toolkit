@@ -22,7 +22,11 @@
       }
     }
   },
-  "projects": {},
+  "projects": {
+    "common": {
+      "tags": []
+    }
+  },
   "workspaceLayout": {
     "appsDir": "packages",
     "libsDir": "packages"

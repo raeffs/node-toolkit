@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@raeffs.dev/common": ["packages/common/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
