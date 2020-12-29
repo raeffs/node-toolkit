@@ -25,6 +25,9 @@
   "projects": {
     "common": {
       "tags": []
+    },
+    "data-source": {
+      "tags": []
     }
   },
   "workspaceLayout": {

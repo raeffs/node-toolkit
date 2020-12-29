@@ -39,6 +39,45 @@
           }
         }
       }
+    },
+    "data-source": {
+      "projectType": "library",
+      "root": "packages/data-source",
+      "sourceRoot": "packages/data-source/src",
+      "prefix": "raeffs.dev",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "packages/data-source/tsconfig.lib.json",
+            "project": "packages/data-source/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/data-source/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/data-source/src/**/*.ts",
+              "packages/data-source/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/data-source"
+          ],
+          "options": {
+            "jestConfig": "packages/data-source/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

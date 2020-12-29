@@ -1,3 +1,3 @@
 module.exports = {
-  projects: ['<rootDir>/packages/common'],
+  projects: ['<rootDir>/packages/common', '<rootDir>/packages/data-source'],
 };

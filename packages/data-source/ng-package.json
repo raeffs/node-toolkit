@@ -1,8 +1,10 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/packages/common",
+  "dest": "../../dist/packages/data-source",
   "lib": {
     "entryFile": "src/index.ts",
-    "umdId": "raeffs.dev.common"
+    "umdModuleIds": {
+      "@raeffs.dev/common": "raeffs.dev.common"
+    }
   }
 }
