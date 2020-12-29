@@ -1,6 +1,7 @@
 {
-  "name": "@raeffs.dev/common",
-  "version": "0.0.1",
+  "name": "@raeffs/common",
+  "repository": "https://github.com/raeffs/node-toolkit",
+  "version": "0.0.2",
   "peerDependencies": {},
   "dependencies": {
     "tslib": "^2.0.0"

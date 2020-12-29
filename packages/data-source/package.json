@@ -1,8 +1,9 @@
 {
-  "name": "@raeffs.dev/data-source",
-  "version": "0.0.1",
+  "name": "@raeffs/data-source",
+  "repository": "https://github.com/raeffs/node-toolkit",
+  "version": "0.0.2",
   "peerDependencies": {
-    "@raeffs.dev/common": "^0.0.1"
+    "@raeffs/common": "^0.0.1"
   },
   "dependencies": {
     "tslib": "^2.0.0"

@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@raeffs.dev/common": ["packages/common/src/index.ts"],
-      "@raeffs.dev/data-source": ["packages/data-source/src/index.ts"]
+      "@raeffs/common": ["packages/common/src/index.ts"],
+      "@raeffs/data-source": ["packages/data-source/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

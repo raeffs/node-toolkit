@@ -1,4 +1,4 @@
-import { noop } from '@raeffs.dev/common';
+import { noop } from '@raeffs/common';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import {
   distinctUntilChanged,
