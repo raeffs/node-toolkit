@@ -1,9 +1,10 @@
 import { noop } from '@raeffs/common';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import {
   distinctUntilChanged,
   map,
   shareReplay,
+  startWith,
   switchMap,
 } from 'rxjs/operators';
 import { Page } from './page.interface';
@@ -15,6 +16,7 @@ export class ConcretePaginatedDataSource<T> implements PaginatedDataSource<T> {
   private readonly sort: BehaviorSubject<Sort<T>>;
   private readonly pageSize: BehaviorSubject<number>;
   private readonly pageNumber: BehaviorSubject<number>;
+  private readonly reloadTrigger = new Subject<void>();
 
   public readonly data: Observable<Page<T>>;
 
@@ -32,6 +34,7 @@ export class ConcretePaginatedDataSource<T> implements PaginatedDataSource<T> {
       this.sort,
       this.pageSize.pipe(distinctUntilChanged()),
       this.pageNumber.pipe(distinctUntilChanged()),
+      this.reloadTrigger.pipe(startWith(null)),
     ]);
 
     this.data = params.pipe(
@@ -60,6 +63,10 @@ export class ConcretePaginatedDataSource<T> implements PaginatedDataSource<T> {
 
   public changeToPreviousPage(): void {
     this.changePageNumber(this.pageNumber.value - 1);
+  }
+
+  public reload(): void {
+    this.reloadTrigger.next();
   }
 
   public connect(): Observable<T[]> {

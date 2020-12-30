@@ -36,4 +36,9 @@ export interface PaginatedDataSource<T> extends DataSource<T> {
    * Changes to the previous page.
    */
   changeToPreviousPage(): void;
+
+  /**
+   * Triggers a reload of the current page.
+   */
+  reload(): void;
 }
