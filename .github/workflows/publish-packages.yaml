@@ -21,6 +21,12 @@ jobs:
             ${{ runner.os }}-modules-
       - name: Install Dependencies
         run: yarn --frozen-lockfile
+      - name: Set Version Number
+        uses: jacobtomlinson/gha-find-replace@master
+        with:
+          find: '0.0.0-PLACEHOLDER'
+          replace: '0.0.${{ github.run_number }}'
+          include: '.*/package.json'
       - name: Build Packages
         run: yarn affected:build --prod --all
       - name: Prepare Publish
