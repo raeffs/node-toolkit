@@ -3,8 +3,10 @@
   "dest": "../../dist/packages/data-source",
   "lib": {
     "entryFile": "src/index.ts",
+    "umdId": "raeffs.dev.data-source",
     "umdModuleIds": {
-      "@raeffs/common": "raeffs.dev.common"
+      "@raeffs/common": "raeffs.dev.common",
+      "@raeffs/rxjs": "raeffs.dev.rxjs"
     }
   }
 }

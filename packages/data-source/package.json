@@ -4,6 +4,7 @@
   "version": "0.0.0-PLACEHOLDER",
   "peerDependencies": {
     "@raeffs/common": "^0.0.0-PLACEHOLDER",
+    "@raeffs/rxjs": "^0.0.0-PLACEHOLDER",
     "rxjs": "~6.5.5"
   },
   "dependencies": {

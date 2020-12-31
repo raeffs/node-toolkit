@@ -3,7 +3,7 @@
  */
 export interface Sort<T> {
   /** The property to sort. */
-  readonly property: keyof T;
+  readonly property: keyof T | string;
   /** The sort direction. */
-  readonly order: 'asc' | 'desc';
+  readonly order: 'Ascending' | 'Descending';
 }

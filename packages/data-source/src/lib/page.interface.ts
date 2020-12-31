@@ -1,3 +1,5 @@
+import { Sort } from './sort.interface';
+
 /**
  * Represents a page of data returned from an endpoint.
  */
@@ -10,4 +12,6 @@ export interface Page<T> {
   readonly pageSize: number;
   /** The current page number. */
   readonly pageNumber: number;
+  /** The current sort direction. */
+  readonly sort: Sort<T>;
 }
