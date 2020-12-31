@@ -28,6 +28,9 @@
     },
     "data-source": {
       "tags": []
+    },
+    "rxjs": {
+      "tags": []
     }
   },
   "workspaceLayout": {

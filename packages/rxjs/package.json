@@ -1,9 +1,8 @@
 {
-  "name": "@raeffs/data-source",
+  "name": "@raeffs/rxjs",
   "repository": "https://github.com/raeffs/node-toolkit",
   "version": "0.0.0-PLACEHOLDER",
   "peerDependencies": {
-    "@raeffs/common": "^0.0.0-PLACEHOLDER",
     "rxjs": "~6.5.5"
   },
   "dependencies": {
