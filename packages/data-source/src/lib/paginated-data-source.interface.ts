@@ -1,7 +1,24 @@
 import { Observable } from 'rxjs';
 import { DataSource } from './data-source.interface';
 import { Page } from './page.interface';
+import { PaginatedEndpoint } from './paginated-endpoint.interface';
 import { Sort } from './sort.interface';
+
+/**
+ * Options used to create a `PaginatedDataSource`.
+ */
+export interface PaginatedDataSourceOptions<T> {
+  /** The endpoint used to get data. */
+  readonly endpoint: PaginatedEndpoint<T>;
+  /** The initial sort direction. */
+  readonly initialSort: Sort<T>;
+  /** The initial page size. */
+  readonly initialPageSize: number;
+  /** The initial page number. */
+  readonly initialPageNumber?: number;
+  /** A stream of page number changes. */
+  readonly pageNumberChanges?: Observable<number>;
+}
 
 /**
  * A data source that supports pagination.

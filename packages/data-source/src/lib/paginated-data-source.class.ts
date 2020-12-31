@@ -1,5 +1,12 @@
 import { noop } from '@raeffs/common';
-import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
+import { asObservable, onlyPositive } from '@raeffs/rxjs';
+import {
+  BehaviorSubject,
+  combineLatest,
+  merge,
+  Observable,
+  Subject,
+} from 'rxjs';
 import {
   distinctUntilChanged,
   map,
@@ -8,8 +15,10 @@ import {
   switchMap,
 } from 'rxjs/operators';
 import { Page } from './page.interface';
-import { PaginatedDataSource } from './paginated-data-source.interface';
-import { PaginatedEndpoint } from './paginated-endpoint.interface';
+import {
+  PaginatedDataSource,
+  PaginatedDataSourceOptions,
+} from './paginated-data-source.interface';
 import { Sort } from './sort.interface';
 
 export class ConcretePaginatedDataSource<T> implements PaginatedDataSource<T> {
@@ -20,26 +29,32 @@ export class ConcretePaginatedDataSource<T> implements PaginatedDataSource<T> {
 
   public readonly data: Observable<Page<T>>;
 
-  constructor(
-    endpoint: PaginatedEndpoint<T>,
-    initialSort: Sort<T>,
-    initialPageSize: number,
-    initialPageNumber: number
-  ) {
-    this.sort = new BehaviorSubject<Sort<T>>(initialSort);
-    this.pageSize = new BehaviorSubject<number>(initialPageSize);
-    this.pageNumber = new BehaviorSubject<number>(initialPageNumber);
+  constructor(options: PaginatedDataSourceOptions<T>) {
+    this.sort = new BehaviorSubject<Sort<T>>(options.initialSort);
+    this.pageSize = new BehaviorSubject<number>(options.initialPageSize);
+    this.pageNumber = new BehaviorSubject<number>(
+      options.initialPageNumber ?? 1
+    );
+
+    const allPageNumberChanges = merge(
+      this.pageNumber,
+      asObservable(options.pageNumberChanges)
+    );
 
     const params = combineLatest([
       this.sort,
       this.pageSize.pipe(distinctUntilChanged()),
-      this.pageNumber.pipe(distinctUntilChanged()),
+      allPageNumberChanges.pipe(
+        startWith(1),
+        onlyPositive(),
+        distinctUntilChanged()
+      ),
       this.reloadTrigger.pipe(startWith(null)),
     ]);
 
     this.data = params.pipe(
       switchMap(([sort, pageSize, pageNumber]) =>
-        endpoint({ sort, pageSize, pageNumber })
+        options.endpoint({ sort, pageSize, pageNumber })
       ),
       shareReplay(1)
     );
