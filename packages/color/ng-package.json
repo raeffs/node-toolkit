@@ -2,6 +2,10 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/packages/color",
   "lib": {
-    "entryFile": "src/index.ts"
+    "entryFile": "src/index.ts",
+    "umdId": "raeffs.dev.color",
+    "umdModuleIds": {
+      "@raeffs/common": "raeffs.dev.common"
+    }
   }
 }
