@@ -1,14 +1,9 @@
 {
   "npmScope": "raeffs.dev",
-  "affected": {
-    "defaultBase": "main"
-  },
+  "affected": { "defaultBase": "main" },
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
@@ -17,24 +12,14 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "common": {
-      "tags": []
-    },
-    "data-source": {
-      "tags": []
-    },
-    "rxjs": {
-      "tags": []
-    }
+    "common": { "tags": [] },
+    "data-source": { "tags": [] },
+    "rxjs": { "tags": [] },
+    "color": { "tags": [] }
   },
-  "workspaceLayout": {
-    "appsDir": "packages",
-    "libsDir": "packages"
-  }
+  "workspaceLayout": { "appsDir": "packages", "libsDir": "packages" }
 }

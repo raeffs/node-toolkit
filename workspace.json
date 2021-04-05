@@ -22,17 +22,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/common/src/**/*.ts",
-              "packages/common/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/common/src/**/*.ts", "packages/common/src/**/*.html"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/common"
-          ],
+          "outputs": ["coverage/packages/common"],
           "options": {
             "jestConfig": "packages/common/jest.config.js",
             "passWithNoTests": true
@@ -61,17 +56,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/data-source/src/**/*.ts",
-              "packages/data-source/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/data-source/src/**/*.ts", "packages/data-source/src/**/*.html"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/data-source"
-          ],
+          "outputs": ["coverage/packages/data-source"],
           "options": {
             "jestConfig": "packages/data-source/jest.config.js",
             "passWithNoTests": true
@@ -100,19 +90,48 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/rxjs/src/**/*.ts",
-              "packages/rxjs/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/rxjs/src/**/*.ts", "packages/rxjs/src/**/*.html"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/rxjs"
-          ],
+          "outputs": ["coverage/packages/rxjs"],
           "options": {
             "jestConfig": "packages/rxjs/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "color": {
+      "projectType": "library",
+      "root": "packages/color",
+      "sourceRoot": "packages/color/src",
+      "prefix": "raeffs.dev",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "packages/color/tsconfig.lib.json",
+            "project": "packages/color/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/color/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/color/src/**/*.ts", "packages/color/src/**/*.html"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/color"],
+          "options": {
+            "jestConfig": "packages/color/jest.config.js",
             "passWithNoTests": true
           }
         }
@@ -124,9 +143,13 @@
   },
   "generators": {
     "@nrwl/angular:application": {
+      "style": "css",
+      "linter": "eslint",
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:library": {
+      "style": "css",
+      "linter": "eslint",
       "unitTestRunner": "jest",
       "strict": true
     },

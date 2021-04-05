@@ -46,3 +46,7 @@ jobs:
         run: yarn publish dist/packages/rxjs
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish @raeffs/color
+        run: yarn publish dist/packages/color
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

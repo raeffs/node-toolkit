@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/packages/common',
     '<rootDir>/packages/data-source',
     '<rootDir>/packages/rxjs',
+    '<rootDir>/packages/color',
   ],
 };
