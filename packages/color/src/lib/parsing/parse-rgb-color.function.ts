@@ -1,7 +1,8 @@
+import { coerceToNumberBetween } from '@raeffs/common';
 import { RgbColor } from '../color.interface';
 import { createColorParser } from './create-color-parser.function';
 
-const RgbColorPattern = /rgb\((\d+),(\d+),(\d+)\)/;
+const RgbColorPattern = /rgb\((-?\d+),(-?\d+),(-?\d+)\)/;
 
 /**
  * Parses the CSS string representation of a color in RGB format.
@@ -11,8 +12,8 @@ const RgbColorPattern = /rgb\((\d+),(\d+),(\d+)\)/;
 export const parseRgbColor = createColorParser<RgbColor>(RgbColorPattern, match => {
   return {
     format: 'RGB',
-    red: Number(match[1]),
-    green: Number(match[2]),
-    blue: Number(match[3]),
+    red: coerceToNumberBetween(match[1], 0, 255),
+    green: coerceToNumberBetween(match[2], 0, 255),
+    blue: coerceToNumberBetween(match[3], 0, 255),
   };
 });

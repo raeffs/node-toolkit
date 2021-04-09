@@ -19,7 +19,8 @@
     "common": { "tags": [] },
     "data-source": { "tags": [] },
     "rxjs": { "tags": [] },
-    "color": { "tags": [] }
+    "color": { "tags": [] },
+    "testing": { "tags": [] }
   },
   "workspaceLayout": { "appsDir": "packages", "libsDir": "packages" }
 }

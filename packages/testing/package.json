@@ -1,0 +1,9 @@
+{
+  "name": "@raeffs/testing",
+  "repository": "https://github.com/raeffs/node-toolkit",
+  "version": "0.0.0-PLACEHOLDER",
+  "peerDependencies": {},
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

@@ -1,7 +1,8 @@
+import { coerceToNumberBetween } from '@raeffs/common';
 import { RgbaColor } from '../color.interface';
 import { createColorParser } from './create-color-parser.function';
 
-const RgbaColorPattern = /rgba\((\d+),(\d+),(\d+),(\d+)\)/;
+const RgbaColorPattern = /rgba\((-?\d+),(-?\d+),(-?\d+),(-?[\d.]+)\)/;
 
 /**
  * Parses the CSS string representation of a color in HEX format.
@@ -11,9 +12,9 @@ const RgbaColorPattern = /rgba\((\d+),(\d+),(\d+),(\d+)\)/;
 export const parseRgbaColor = createColorParser<RgbaColor>(RgbaColorPattern, match => {
   return {
     format: 'RGBA',
-    red: Number(match[1]),
-    green: Number(match[2]),
-    blue: Number(match[3]),
-    alpha: Number(match[4]),
+    red: coerceToNumberBetween(match[1], 0, 255),
+    green: coerceToNumberBetween(match[2], 0, 255),
+    blue: coerceToNumberBetween(match[3], 0, 255),
+    alpha: coerceToNumberBetween(match[4], 0, 1),
   };
 });

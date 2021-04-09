@@ -29,6 +29,8 @@ jobs:
           include: '.*/package.json'
       - name: Build Packages
         run: yarn affected:build --prod --all
+      - name: Test Packages
+        run: yarn affected:test
       - name: Prepare Publish
         uses: actions/setup-node@v1
         with:
