@@ -22,8 +22,12 @@
       }
     }
   },
+  "workspaceLayout": {
+    "appsDir": "packages",
+    "libsDir": "packages"
+  },
   "projects": {
-    "common": {
+    "core-common": {
       "tags": []
     },
     "data-source": {
@@ -38,9 +42,5 @@
     "core-testing": {
       "tags": []
     }
-  },
-  "workspaceLayout": {
-    "appsDir": "packages",
-    "libsDir": "packages"
   }
 }

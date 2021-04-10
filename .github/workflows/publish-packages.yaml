@@ -37,7 +37,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@raeffs'
       - name: Publish @raeffs/common
-        run: yarn publish dist/packages/common
+        run: yarn publish dist/packages/core/common
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish @raeffs/data-source

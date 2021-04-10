@@ -1,40 +1,26 @@
 {
   "version": 2,
-  "projects": {
-    "common": {
-      "projectType": "library",
-      "root": "packages/common",
-      "sourceRoot": "packages/common/src",
-      "prefix": "raeffs.dev",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "packages/common/tsconfig.lib.json",
-            "project": "packages/common/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "packages/common/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["packages/common/src/**/*.ts", "packages/common/src/**/*.html"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/common"],
-          "options": {
-            "jestConfig": "packages/common/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "core-common",
+  "generators": {
+    "@nrwl/angular:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
     },
+    "@nrwl/angular:library": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "strict": true
+    },
+    "@nrwl/angular:component": {
+      "style": "css"
+    }
+  },
+  "projects": {
     "data-source": {
       "projectType": "library",
       "root": "packages/data-source",
@@ -170,26 +156,40 @@
           }
         }
       }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
-  "generators": {
-    "@nrwl/angular:application": {
-      "style": "css",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
     },
-    "@nrwl/angular:library": {
-      "style": "css",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "strict": true
-    },
-    "@nrwl/angular:component": {
-      "style": "css"
+    "core-common": {
+      "projectType": "library",
+      "root": "packages/core/common",
+      "sourceRoot": "packages/core/common/src",
+      "prefix": "raeffs.dev",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "packages/core/common/tsconfig.lib.json",
+            "project": "packages/core/common/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/core/common/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/core/common/src/**/*.ts", "packages/core/common/src/**/*.html"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/core/common"],
+          "options": {
+            "jestConfig": "packages/core/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
-  },
-  "defaultProject": "common"
+  }
 }

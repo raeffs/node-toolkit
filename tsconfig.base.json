@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@raeffs/common": ["packages/common/src/index.ts"],
+      "@raeffs/common": ["packages/core/common/src/index.ts"],
       "@raeffs/data-source": ["packages/data-source/src/index.ts"],
       "@raeffs/rxjs": ["packages/rxjs/src/index.ts"],
       "@raeffs/color": ["packages/color/src/index.ts"],
