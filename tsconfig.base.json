@@ -15,10 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@raeffs/color": ["packages/core/color/src/index.ts"],
       "@raeffs/common": ["packages/core/common/src/index.ts"],
       "@raeffs/data-source": ["packages/core/data-source/src/index.ts"],
       "@raeffs/rxjs": ["packages/core/rxjs/src/index.ts"],
-      "@raeffs/color": ["packages/core/color/src/index.ts"],
       "@raeffs/testing": ["packages/core/testing/src/index.ts"]
     }
   },

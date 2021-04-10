@@ -27,6 +27,9 @@
     "libsDir": "packages"
   },
   "projects": {
+    "core-color": {
+      "tags": []
+    },
     "core-common": {
       "tags": []
     },
@@ -34,9 +37,6 @@
       "tags": []
     },
     "core-rxjs": {
-      "tags": []
-    },
-    "core-color": {
       "tags": []
     },
     "core-testing": {

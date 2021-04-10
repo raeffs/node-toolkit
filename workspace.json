@@ -21,90 +21,22 @@
     }
   },
   "projects": {
-    "core-testing": {
-      "projectType": "library",
-      "root": "packages/core/testing",
-      "sourceRoot": "packages/core/testing/src",
-      "prefix": "raeffs.dev",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "packages/core/testing/tsconfig.lib.json",
-            "project": "packages/core/testing/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "packages/core/testing/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["packages/core/testing/src/**/*.ts", "packages/core/testing/src/**/*.html"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/core/testing"],
-          "options": {
-            "jestConfig": "packages/core/testing/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "core-common": {
-      "projectType": "library",
-      "root": "packages/core/common",
-      "sourceRoot": "packages/core/common/src",
-      "prefix": "raeffs.dev",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "packages/core/common/tsconfig.lib.json",
-            "project": "packages/core/common/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "packages/core/common/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["packages/core/common/src/**/*.ts", "packages/core/common/src/**/*.html"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/core/common"],
-          "options": {
-            "jestConfig": "packages/core/common/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "core-color": {
+      "prefix": "raeffs.dev",
       "projectType": "library",
       "root": "packages/core/color",
       "sourceRoot": "packages/core/color/src",
-      "prefix": "raeffs.dev",
       "targets": {
         "build": {
-          "executor": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "packages/core/color/tsconfig.lib.json",
-            "project": "packages/core/color/ng-package.json"
-          },
           "configurations": {
             "production": {
               "tsConfig": "packages/core/color/tsconfig.lib.prod.json"
             }
+          },
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "project": "packages/core/color/ng-package.json",
+            "tsConfig": "packages/core/color/tsconfig.lib.json"
           }
         },
         "lint": {
@@ -115,30 +47,64 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/core/color"],
           "options": {
             "jestConfig": "packages/core/color/jest.config.js",
             "passWithNoTests": true
+          },
+          "outputs": ["coverage/packages/core/color"]
+        }
+      }
+    },
+    "core-common": {
+      "prefix": "raeffs.dev",
+      "projectType": "library",
+      "root": "packages/core/common",
+      "sourceRoot": "packages/core/common/src",
+      "targets": {
+        "build": {
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/core/common/tsconfig.lib.prod.json"
+            }
+          },
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "project": "packages/core/common/ng-package.json",
+            "tsConfig": "packages/core/common/tsconfig.lib.json"
           }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/core/common/src/**/*.ts", "packages/core/common/src/**/*.html"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/core/common/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/packages/core/common"]
         }
       }
     },
     "core-data-source": {
+      "prefix": "raeffs.dev",
       "projectType": "library",
       "root": "packages/core/data-source",
       "sourceRoot": "packages/core/data-source/src",
-      "prefix": "raeffs.dev",
       "targets": {
         "build": {
-          "executor": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "packages/core/data-source/tsconfig.lib.json",
-            "project": "packages/core/data-source/ng-package.json"
-          },
           "configurations": {
             "production": {
               "tsConfig": "packages/core/data-source/tsconfig.lib.prod.json"
             }
+          },
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "project": "packages/core/data-source/ng-package.json",
+            "tsConfig": "packages/core/data-source/tsconfig.lib.json"
           }
         },
         "lint": {
@@ -149,30 +115,30 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/core/data-source"],
           "options": {
             "jestConfig": "packages/core/data-source/jest.config.js",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/packages/core/data-source"]
         }
       }
     },
     "core-rxjs": {
+      "prefix": "raeffs.dev",
       "projectType": "library",
       "root": "packages/core/rxjs",
       "sourceRoot": "packages/core/rxjs/src",
-      "prefix": "raeffs.dev",
       "targets": {
         "build": {
-          "executor": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "packages/core/rxjs/tsconfig.lib.json",
-            "project": "packages/core/rxjs/ng-package.json"
-          },
           "configurations": {
             "production": {
               "tsConfig": "packages/core/rxjs/tsconfig.lib.prod.json"
             }
+          },
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "project": "packages/core/rxjs/ng-package.json",
+            "tsConfig": "packages/core/rxjs/tsconfig.lib.json"
           }
         },
         "lint": {
@@ -183,11 +149,45 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/core/rxjs"],
           "options": {
             "jestConfig": "packages/core/rxjs/jest.config.js",
             "passWithNoTests": true
+          },
+          "outputs": ["coverage/packages/core/rxjs"]
+        }
+      }
+    },
+    "core-testing": {
+      "prefix": "raeffs.dev",
+      "projectType": "library",
+      "root": "packages/core/testing",
+      "sourceRoot": "packages/core/testing/src",
+      "targets": {
+        "build": {
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/core/testing/tsconfig.lib.prod.json"
+            }
+          },
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "project": "packages/core/testing/ng-package.json",
+            "tsConfig": "packages/core/testing/tsconfig.lib.json"
           }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/core/testing/src/**/*.ts", "packages/core/testing/src/**/*.html"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/core/testing/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/packages/core/testing"]
         }
       }
     }
