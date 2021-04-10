@@ -18,7 +18,7 @@
       "@raeffs/common": ["packages/core/common/src/index.ts"],
       "@raeffs/data-source": ["packages/data-source/src/index.ts"],
       "@raeffs/rxjs": ["packages/rxjs/src/index.ts"],
-      "@raeffs/color": ["packages/color/src/index.ts"],
+      "@raeffs/color": ["packages/core/color/src/index.ts"],
       "@raeffs/testing": ["packages/core/testing/src/index.ts"]
     }
   },

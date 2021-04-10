@@ -36,7 +36,7 @@
     "rxjs": {
       "tags": []
     },
-    "color": {
+    "core-color": {
       "tags": []
     },
     "core-testing": {

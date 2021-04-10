@@ -49,7 +49,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish @raeffs/color
-        run: yarn publish dist/packages/color
+        run: yarn publish dist/packages/core/color
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish @raeffs/testing

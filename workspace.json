@@ -89,40 +89,6 @@
         }
       }
     },
-    "color": {
-      "projectType": "library",
-      "root": "packages/color",
-      "sourceRoot": "packages/color/src",
-      "prefix": "raeffs.dev",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "packages/color/tsconfig.lib.json",
-            "project": "packages/color/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "packages/color/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["packages/color/src/**/*.ts", "packages/color/src/**/*.html"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/color"],
-          "options": {
-            "jestConfig": "packages/color/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "core-testing": {
       "projectType": "library",
       "root": "packages/core/testing",
@@ -186,6 +152,40 @@
           "outputs": ["coverage/packages/core/common"],
           "options": {
             "jestConfig": "packages/core/common/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-color": {
+      "projectType": "library",
+      "root": "packages/core/color",
+      "sourceRoot": "packages/core/color/src",
+      "prefix": "raeffs.dev",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "packages/core/color/tsconfig.lib.json",
+            "project": "packages/core/color/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/core/color/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/core/color/src/**/*.ts", "packages/core/color/src/**/*.html"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/core/color"],
+          "options": {
+            "jestConfig": "packages/core/color/jest.config.js",
             "passWithNoTests": true
           }
         }
