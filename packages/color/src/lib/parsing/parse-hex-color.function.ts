@@ -1,7 +1,7 @@
 import { HexColor } from '../color.interface';
 import { createColorParser } from './create-color-parser.function';
 
-const HexColorPattern = /^#?([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/;
+const HexColorPattern = /^#([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})$/;
 
 /**
  * Parses the CSS string representation of a color in HEX format.
