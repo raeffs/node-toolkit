@@ -4,6 +4,6 @@ module.exports = {
     '<rootDir>/packages/data-source',
     '<rootDir>/packages/rxjs',
     '<rootDir>/packages/color',
-    '<rootDir>/packages/testing',
+    '<rootDir>/packages/core/testing',
   ],
 };

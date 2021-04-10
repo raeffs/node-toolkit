@@ -137,35 +137,35 @@
         }
       }
     },
-    "testing": {
+    "core-testing": {
       "projectType": "library",
-      "root": "packages/testing",
-      "sourceRoot": "packages/testing/src",
+      "root": "packages/core/testing",
+      "sourceRoot": "packages/core/testing/src",
       "prefix": "raeffs.dev",
       "targets": {
         "build": {
           "executor": "@nrwl/angular:package",
           "options": {
-            "tsConfig": "packages/testing/tsconfig.lib.json",
-            "project": "packages/testing/ng-package.json"
+            "tsConfig": "packages/core/testing/tsconfig.lib.json",
+            "project": "packages/core/testing/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "packages/testing/tsconfig.lib.prod.json"
+              "tsConfig": "packages/core/testing/tsconfig.lib.prod.json"
             }
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/testing/src/**/*.ts", "packages/testing/src/**/*.html"]
+            "lintFilePatterns": ["packages/core/testing/src/**/*.ts", "packages/core/testing/src/**/*.html"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/testing"],
+          "outputs": ["coverage/packages/core/testing"],
           "options": {
-            "jestConfig": "packages/testing/jest.config.js",
+            "jestConfig": "packages/core/testing/jest.config.js",
             "passWithNoTests": true
           }
         }

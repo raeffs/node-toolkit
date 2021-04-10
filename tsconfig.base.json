@@ -19,7 +19,7 @@
       "@raeffs/data-source": ["packages/data-source/src/index.ts"],
       "@raeffs/rxjs": ["packages/rxjs/src/index.ts"],
       "@raeffs/color": ["packages/color/src/index.ts"],
-      "@raeffs/testing": ["packages/testing/src/index.ts"]
+      "@raeffs/testing": ["packages/core/testing/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
