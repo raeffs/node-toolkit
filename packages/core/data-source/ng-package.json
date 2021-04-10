@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/packages/core/data-source",
+  "lib": {
+    "entryFile": "src/index.ts",
+    "umdId": "raeffs.data-source",
+    "umdModuleIds": {
+      "@raeffs/common": "raeffs.common",
+      "@raeffs/rxjs": "raeffs.rxjs"
+    }
+  }
+}

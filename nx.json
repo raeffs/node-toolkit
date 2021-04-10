@@ -30,7 +30,7 @@
     "core-common": {
       "tags": []
     },
-    "data-source": {
+    "core-data-source": {
       "tags": []
     },
     "rxjs": {

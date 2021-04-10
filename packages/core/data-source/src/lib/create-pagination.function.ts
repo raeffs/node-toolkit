@@ -4,10 +4,7 @@ import { Pagination } from './pagination.interface';
 /**
  * Represents the information of a page required to create a pagination.
  */
-export type PageInfo = Pick<
-  Page<unknown>,
-  'pageNumber' | 'pageSize' | 'totalItems'
->;
+export type PageInfo = Pick<Page<unknown>, 'pageNumber' | 'pageSize' | 'totalItems'>;
 
 /**
  * Creates a pagination.

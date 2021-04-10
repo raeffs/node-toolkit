@@ -41,7 +41,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish @raeffs/data-source
-        run: yarn publish dist/packages/data-source
+        run: yarn publish dist/packages/core/data-source
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish @raeffs/rxjs

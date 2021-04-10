@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'data-source',
-  preset: '../../jest.preset.js',
+  displayName: 'core-data-source',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../coverage/packages/data-source',
+  coverageDirectory: '../../../coverage/packages/core/data-source',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
