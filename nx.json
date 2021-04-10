@@ -33,7 +33,7 @@
     "core-data-source": {
       "tags": []
     },
-    "rxjs": {
+    "core-rxjs": {
       "tags": []
     },
     "core-color": {

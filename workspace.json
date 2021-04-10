@@ -21,40 +21,6 @@
     }
   },
   "projects": {
-    "rxjs": {
-      "projectType": "library",
-      "root": "packages/rxjs",
-      "sourceRoot": "packages/rxjs/src",
-      "prefix": "raeffs.dev",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/angular:package",
-          "options": {
-            "tsConfig": "packages/rxjs/tsconfig.lib.json",
-            "project": "packages/rxjs/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "packages/rxjs/tsconfig.lib.prod.json"
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["packages/rxjs/src/**/*.ts", "packages/rxjs/src/**/*.html"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/rxjs"],
-          "options": {
-            "jestConfig": "packages/rxjs/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "core-testing": {
       "projectType": "library",
       "root": "packages/core/testing",
@@ -186,6 +152,40 @@
           "outputs": ["coverage/packages/core/data-source"],
           "options": {
             "jestConfig": "packages/core/data-source/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-rxjs": {
+      "projectType": "library",
+      "root": "packages/core/rxjs",
+      "sourceRoot": "packages/core/rxjs/src",
+      "prefix": "raeffs.dev",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "packages/core/rxjs/tsconfig.lib.json",
+            "project": "packages/core/rxjs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/core/rxjs/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/core/rxjs/src/**/*.ts", "packages/core/rxjs/src/**/*.html"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/core/rxjs"],
+          "options": {
+            "jestConfig": "packages/core/rxjs/jest.config.js",
             "passWithNoTests": true
           }
         }

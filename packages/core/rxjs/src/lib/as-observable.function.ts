@@ -11,9 +11,7 @@ export type MayBeObservable<T> = T | Promise<T> | Observable<T>;
  * @param value The value to convert to an observable.
  * @returns The value as observable.
  */
-export function asObservable<T>(
-  value: MayBeObservable<T> | null | undefined
-): Observable<T> {
+export function asObservable<T>(value: MayBeObservable<T> | null | undefined): Observable<T> {
   if (!value) {
     return EMPTY;
   }
