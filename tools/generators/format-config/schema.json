@@ -1,0 +1,7 @@
+{
+  "cli": "nx",
+  "id": "format-config",
+  "type": "object",
+  "properties": {},
+  "required": []
+}
