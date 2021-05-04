@@ -1,14 +1,9 @@
 {
   "npmScope": "raeffs",
-  "affected": {
-    "defaultBase": "main"
-  },
+  "affected": { "defaultBase": "main" },
   "implicitDependencies": {
     "workspace.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
@@ -17,30 +12,17 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
-  "workspaceLayout": {
-    "appsDir": "packages",
-    "libsDir": "packages"
-  },
+  "workspaceLayout": { "appsDir": "packages", "libsDir": "packages" },
   "projects": {
-    "core-color": {
-      "tags": []
-    },
-    "core-common": {
-      "tags": []
-    },
-    "core-data-source": {
-      "tags": []
-    },
-    "core-rxjs": {
-      "tags": []
-    },
-    "core-testing": {
-      "tags": []
-    }
+    "core-color": { "tags": [] },
+    "core-common": { "tags": [] },
+    "core-data-source": { "tags": [] },
+    "core-rxjs": { "tags": [] },
+    "core-testing": { "tags": [] },
+    "angular-events": { "tags": [] },
+    "angular-rxjs": { "tags": [] }
   }
 }

@@ -31,6 +31,8 @@ jobs:
         run: yarn affected:build --prod --all
       - name: Test Packages
         run: yarn affected:test
+      - name: Lint Packages
+        run: yarn affected:lint
       - name: Prepare Publish
         uses: actions/setup-node@v1
         with:
@@ -54,5 +56,13 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish @raeffs/testing
         run: yarn publish dist/packages/core/testing
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish @raeffs/angular-rxjs
+        run: yarn publish dist/packages/angular/rxjs
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish @raeffs/angular-events
+        run: yarn publish dist/packages/angular/events
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

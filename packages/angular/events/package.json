@@ -1,0 +1,12 @@
+{
+  "name": "@raeffs/angular-events",
+  "repository": "https://github.com/raeffs/node-toolkit",
+  "version": "0.0.0-PLACEHOLDER",
+  "peerDependencies": {
+    "@angular/core": "^12.0.0",
+    "@raeffs/common": "^0.0.0-PLACEHOLDER"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

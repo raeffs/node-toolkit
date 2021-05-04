@@ -1,0 +1,12 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/packages/angular/events",
+  "lib": {
+    "entryFile": "src/index.ts",
+    "umdId": "raeffs.angular.events",
+    "umdModuleIds": {
+      "@raeffs/common": "raeffs.common",
+      "@raeffs/angular-rxjs": "raeffs.angular.rxjs"
+    }
+  }
+}

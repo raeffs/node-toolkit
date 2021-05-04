@@ -42,7 +42,10 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/core/color/src/**/*.ts", "packages/core/color/src/**/*.html"]
+            "lintFilePatterns": [
+              "packages/core/color/src/**/*.ts",
+              "packages/core/color/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -51,7 +54,9 @@
             "jestConfig": "packages/core/color/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/packages/core/color"]
+          "outputs": [
+            "coverage/packages/core/color"
+          ]
         }
       }
     },
@@ -76,7 +81,10 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/core/common/src/**/*.ts", "packages/core/common/src/**/*.html"]
+            "lintFilePatterns": [
+              "packages/core/common/src/**/*.ts",
+              "packages/core/common/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -85,7 +93,9 @@
             "jestConfig": "packages/core/common/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/packages/core/common"]
+          "outputs": [
+            "coverage/packages/core/common"
+          ]
         }
       }
     },
@@ -110,7 +120,10 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/core/data-source/src/**/*.ts", "packages/core/data-source/src/**/*.html"]
+            "lintFilePatterns": [
+              "packages/core/data-source/src/**/*.ts",
+              "packages/core/data-source/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -119,7 +132,9 @@
             "jestConfig": "packages/core/data-source/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/packages/core/data-source"]
+          "outputs": [
+            "coverage/packages/core/data-source"
+          ]
         }
       }
     },
@@ -144,7 +159,10 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/core/rxjs/src/**/*.ts", "packages/core/rxjs/src/**/*.html"]
+            "lintFilePatterns": [
+              "packages/core/rxjs/src/**/*.ts",
+              "packages/core/rxjs/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -153,7 +171,9 @@
             "jestConfig": "packages/core/rxjs/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/packages/core/rxjs"]
+          "outputs": [
+            "coverage/packages/core/rxjs"
+          ]
         }
       }
     },
@@ -178,7 +198,10 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["packages/core/testing/src/**/*.ts", "packages/core/testing/src/**/*.html"]
+            "lintFilePatterns": [
+              "packages/core/testing/src/**/*.ts",
+              "packages/core/testing/src/**/*.html"
+            ]
           }
         },
         "test": {
@@ -187,7 +210,87 @@
             "jestConfig": "packages/core/testing/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": ["coverage/packages/core/testing"]
+          "outputs": [
+            "coverage/packages/core/testing"
+          ]
+        }
+      }
+    },
+    "angular-events": {
+      "projectType": "library",
+      "root": "packages/angular/events",
+      "sourceRoot": "packages/angular/events/src",
+      "prefix": "raeffs",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "packages/angular/events/tsconfig.lib.json",
+            "project": "packages/angular/events/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/angular/events/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/angular/events/src/**/*.ts",
+              "packages/angular/events/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/angular/events"
+          ],
+          "options": {
+            "jestConfig": "packages/angular/events/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "angular-rxjs": {
+      "projectType": "library",
+      "root": "packages/angular/rxjs",
+      "sourceRoot": "packages/angular/rxjs/src",
+      "prefix": "raeffs",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "packages/angular/rxjs/tsconfig.lib.json",
+            "project": "packages/angular/rxjs/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/angular/rxjs/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/angular/rxjs/src/**/*.ts",
+              "packages/angular/rxjs/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/angular/rxjs"
+          ],
+          "options": {
+            "jestConfig": "packages/angular/rxjs/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }

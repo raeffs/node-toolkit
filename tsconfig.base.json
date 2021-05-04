@@ -19,7 +19,9 @@
       "@raeffs/common": ["packages/core/common/src/index.ts"],
       "@raeffs/data-source": ["packages/core/data-source/src/index.ts"],
       "@raeffs/rxjs": ["packages/core/rxjs/src/index.ts"],
-      "@raeffs/testing": ["packages/core/testing/src/index.ts"]
+      "@raeffs/testing": ["packages/core/testing/src/index.ts"],
+      "@raeffs/angular-events": ["packages/angular/events/src/index.ts"],
+      "@raeffs/angular-rxjs": ["packages/angular/rxjs/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
