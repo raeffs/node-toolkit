@@ -3,8 +3,9 @@
   "repository": "https://github.com/raeffs/node-toolkit",
   "version": "0.0.0-PLACEHOLDER",
   "peerDependencies": {
-    "@angular/core": "^12.0.0",
-    "@raeffs/common": "^0.0.0-PLACEHOLDER"
+    "@angular/core": "^11.0.0",
+    "@raeffs/common": "^0.0.0-PLACEHOLDER",
+    "@raeffs/angular-rxjs": "^0.0.0-PLACEHOLDER"
   },
   "dependencies": {
     "tslib": "^2.0.0"
