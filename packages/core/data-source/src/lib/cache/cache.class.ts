@@ -42,6 +42,17 @@ export interface CachedLookup<T> {
   readonly data: T;
 }
 
+/**
+ * Represents the result of a cache lookup for multiple entries.
+ */
+export interface CombinedCacheLookup<T> {
+  readonly cachedIds: string[];
+  readonly staleIds: string[];
+  readonly indexedIds: string[];
+  readonly missingIds: string[];
+  readonly data: T[];
+}
+
 type CacheEntry<T> = IndexedCacheLookup<T> | CachedLookup<T>;
 
 /**
@@ -102,6 +113,55 @@ export class Cache<T extends CachableModel> {
   }
 
   /**
+   * Gets multiple entries from the cache.
+   * @param ids The identifiers of the entries to return.
+   * @returns The result of the cache lookup.
+   */
+  public getMultiple(...ids: string[]): CombinedCacheLookup<T> {
+    const cachedIds: string[] = [];
+    const staleIds: string[] = [];
+    const indexedIds: string[] = [];
+    const missingIds: string[] = [];
+    const data: T[] = [];
+
+    for (const id of ids) {
+      const cached = this.get(id);
+      switch (cached.state) {
+        case CacheEntryState.Cached:
+          cachedIds.push(id);
+          data.push(cached.data);
+          break;
+        case CacheEntryState.Stale:
+          staleIds.push(id);
+          data.push(cached.data);
+          break;
+        case CacheEntryState.Indexed:
+          indexedIds.push(id);
+          break;
+        case CacheEntryState.Missing:
+          missingIds.push(id);
+          break;
+      }
+    }
+
+    return {
+      cachedIds,
+      staleIds,
+      indexedIds,
+      missingIds,
+      data,
+    };
+  }
+
+  /**
+   * Gets all entries from the cache.
+   * @returns All entries from the cache.
+   */
+  public getAll(): PartialModel<T>[] {
+    return [...this.entries.values()].map(x => x.data);
+  }
+
+  /**
    * Invalidates an entry in the cache.
    * @param id The identifier of the entry to invalidate.
    */
@@ -116,6 +176,14 @@ export class Cache<T extends CachableModel> {
       data: cached.data,
       state: CacheEntryState.Stale,
     });
+  }
+
+  /**
+   * Removes an entry from the cache.
+   * @param id The identifier of the entry to remove.
+   */
+  public remove(id: string): void {
+    this.entries.delete(id);
   }
 
   /**

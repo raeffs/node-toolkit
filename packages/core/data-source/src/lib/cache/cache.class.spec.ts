@@ -113,6 +113,16 @@ describe('Cache', () => {
     expect(actual.state).toBe(CacheEntryState.Missing);
   });
 
+  it('should return CacheEntryState.Missing if a cached model is removed', () => {
+    const model = getRandomModel();
+
+    sut.addOrUpdate(model);
+    sut.remove(model.id);
+    const actual = sut.get(model.id);
+
+    expect(actual.state).toBe(CacheEntryState.Missing);
+  });
+
   it('should return CacheEntryState.Missing if the cache is cleared', () => {
     const model = getRandomModel();
 
