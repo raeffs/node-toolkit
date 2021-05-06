@@ -1,3 +1,4 @@
+import { Observable, Subject } from 'rxjs';
 import { CachableModel, PartialModel } from './cachable-model.interface';
 
 /**
@@ -60,6 +61,9 @@ type CacheEntry<T> = IndexedCacheLookup<T> | CachedLookup<T>;
  */
 export class Cache<T extends CachableModel> {
   private readonly entries: Map<string, CacheEntry<T>> = new Map<string, CacheEntry<T>>();
+  private readonly changeFeed: Subject<void> = new Subject<void>();
+
+  public readonly changes: Observable<void> = this.changeFeed.asObservable();
 
   /**
    * Adds or updates one or more entries.
@@ -72,6 +76,7 @@ export class Cache<T extends CachableModel> {
         state: CacheEntryState.Cached,
       });
     }
+    this.changeFeed.next();
   }
 
   /**
@@ -91,6 +96,7 @@ export class Cache<T extends CachableModel> {
         state: CacheEntryState.Indexed,
       });
     }
+    this.changeFeed.next();
   }
 
   /**
@@ -176,6 +182,8 @@ export class Cache<T extends CachableModel> {
       data: cached.data,
       state: CacheEntryState.Stale,
     });
+
+    this.changeFeed.next();
   }
 
   /**
@@ -184,6 +192,7 @@ export class Cache<T extends CachableModel> {
    */
   public remove(id: string): void {
     this.entries.delete(id);
+    this.changeFeed.next();
   }
 
   /**
@@ -191,5 +200,6 @@ export class Cache<T extends CachableModel> {
    */
   public clear(): void {
     this.entries.clear();
+    this.changeFeed.next();
   }
 }

@@ -32,9 +32,10 @@ export abstract class CachingApiClient<T extends CachableModel> {
   }
 
   public find(query: FindQueryParameters): Observable<PartialModel<T>[]> {
-    const initiallyCached = of(this.findInCache(query));
+    const initiallyCached = this.findInCache(query);
     const updated = this.executeFind(query).pipe(tap(models => this.cache.indexIfMissing(...models)));
-    return concat(initiallyCached, updated);
+    const changes = this.cache.changes.pipe(switchMap(() => this.findInCache(query)));
+    return concat(initiallyCached, updated, changes);
   }
 
   public get(id: string): Observable<T> {
@@ -95,7 +96,7 @@ export abstract class CachingApiClient<T extends CachableModel> {
 
   protected abstract executeDelete(id: string): Observable<void>;
 
-  private findInCache(query: FindQueryParameters): PartialModel<T>[] {
+  private findInCache(query: FindQueryParameters): Observable<PartialModel<T>[]> {
     const searchTerm = query.searchTerm.toUpperCase();
     const entries: PartialModel<T>[] = [];
     for (const entry of this.cache.getAll()) {
@@ -103,7 +104,7 @@ export abstract class CachingApiClient<T extends CachableModel> {
         entries.push(entry);
       }
     }
-    return entries;
+    return of(entries);
   }
 
   private sharedGetMany(ids: string[]): Observable<T[]> {
