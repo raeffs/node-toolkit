@@ -1,3 +1,6 @@
+export * from './lib/cache/cachable-model.interface';
+export * from './lib/cache/cache.class';
+export * from './lib/cache/caching-api-client.class';
 export * from './lib/create-paginated-data-source.function';
 export * from './lib/create-pagination.function';
 export * from './lib/data-source.interface';
