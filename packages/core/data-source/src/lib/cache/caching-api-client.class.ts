@@ -74,7 +74,7 @@ export abstract class CachingApiClient<T extends CachableModel> {
     return lookup.data.length > 0 ? concat(initiallyCached, updated) : updated;
   }
 
-  public create(model: T): Observable<T> {
+  public create(model: Omit<T, 'id'>): Observable<T> {
     return this.executeCreate(model).pipe(tap(created => this.cache.addOrUpdate(created)));
   }
 
@@ -90,7 +90,7 @@ export abstract class CachingApiClient<T extends CachableModel> {
 
   protected abstract executeGetMany(...ids: string[]): Observable<T[]>;
 
-  protected abstract executeCreate(model: T): Observable<T>;
+  protected abstract executeCreate(model: Omit<T, 'id'>): Observable<T>;
 
   protected abstract executeUpdate(id: string, model: T): Observable<T>;
 
