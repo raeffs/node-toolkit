@@ -66,3 +66,7 @@ jobs:
         run: yarn publish dist/packages/angular/events
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish @raeffs/angular-router
+        run: yarn publish dist/packages/angular/router
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

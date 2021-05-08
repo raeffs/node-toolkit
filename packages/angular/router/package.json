@@ -1,0 +1,12 @@
+{
+  "name": "@raeffs/angular-router",
+  "repository": "https://github.com/raeffs/node-toolkit",
+  "version": "0.0.0-PLACEHOLDER",
+  "peerDependencies": {
+    "@angular/core": "^11.2.8",
+    "@angular/router": "^11.2.8"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  }
+}

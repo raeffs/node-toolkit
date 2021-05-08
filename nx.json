@@ -23,6 +23,7 @@
     "core-rxjs": { "tags": [] },
     "core-testing": { "tags": [] },
     "angular-events": { "tags": [] },
-    "angular-rxjs": { "tags": [] }
+    "angular-rxjs": { "tags": [] },
+    "angular-router": { "tags": [] }
   }
 }

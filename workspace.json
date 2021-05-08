@@ -293,6 +293,45 @@
           }
         }
       }
+    },
+    "angular-router": {
+      "projectType": "library",
+      "root": "packages/angular/router",
+      "sourceRoot": "packages/angular/router/src",
+      "prefix": "raeffs",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "packages/angular/router/tsconfig.lib.json",
+            "project": "packages/angular/router/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "packages/angular/router/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/angular/router/src/**/*.ts",
+              "packages/angular/router/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/angular/router"
+          ],
+          "options": {
+            "jestConfig": "packages/angular/router/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
