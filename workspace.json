@@ -57,6 +57,12 @@
           "outputs": [
             "coverage/packages/core/color"
           ]
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn publish dist/packages/core/color"
+          }
         }
       }
     },
@@ -96,6 +102,12 @@
           "outputs": [
             "coverage/packages/core/common"
           ]
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn publish dist/packages/core/common"
+          }
         }
       }
     },
@@ -135,6 +147,12 @@
           "outputs": [
             "coverage/packages/core/data-source"
           ]
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn publish dist/packages/core/data-source"
+          }
         }
       }
     },
@@ -174,6 +192,12 @@
           "outputs": [
             "coverage/packages/core/rxjs"
           ]
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn publish dist/packages/core/rxjs"
+          }
         }
       }
     },
@@ -213,6 +237,12 @@
           "outputs": [
             "coverage/packages/core/testing"
           ]
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn publish dist/packages/core/testing"
+          }
         }
       }
     },
@@ -251,6 +281,12 @@
           "options": {
             "jestConfig": "packages/angular/events/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn publish dist/packages/angular/events"
           }
         }
       }
@@ -291,6 +327,12 @@
             "jestConfig": "packages/angular/rxjs/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn publish dist/packages/angular/rxjs"
+          }
         }
       }
     },
@@ -329,6 +371,12 @@
           "options": {
             "jestConfig": "packages/angular/router/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "publish": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn publish dist/packages/angular/router"
           }
         }
       }

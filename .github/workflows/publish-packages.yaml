@@ -54,35 +54,7 @@ jobs:
         with:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@raeffs'
-      - name: Publish @raeffs/common
-        run: yarn publish dist/packages/core/common
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish @raeffs/data-source
-        run: yarn publish dist/packages/core/data-source
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish @raeffs/rxjs
-        run: yarn publish dist/packages/core/rxjs
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish @raeffs/color
-        run: yarn publish dist/packages/core/color
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish @raeffs/testing
-        run: yarn publish dist/packages/core/testing
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish @raeffs/angular-rxjs
-        run: yarn publish dist/packages/angular/rxjs
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish @raeffs/angular-events
-        run: yarn publish dist/packages/angular/events
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Publish @raeffs/angular-router
-        run: yarn publish dist/packages/angular/router
+      - name: Publish Packages
+        run: yarn affected --target publish --all
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
