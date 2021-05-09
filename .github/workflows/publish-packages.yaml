@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+env:
+  RXJS_VERSION: 6.6.3
+  ANGULAR_VERSION: 11.2.13
+
 jobs:
   publish_packages:
     name: Publish Packages
@@ -26,6 +30,18 @@ jobs:
         with:
           find: '0.0.0-PLACEHOLDER'
           replace: '0.0.${{ github.run_number }}'
+          include: '.*/package.json'
+      - name: Set RxJs Version
+        uses: jacobtomlinson/gha-find-replace@0.1.2
+        with:
+          find: '0.0.0-RXJS'
+          replace: '${{ env.RXJS_VERSION }}'
+          include: '.*/package.json'
+      - name: Set Angular Version
+        uses: jacobtomlinson/gha-find-replace@0.1.2
+        with:
+          find: '0.0.0-ANGULAR'
+          replace: '${{ env.ANGULAR_VERSION }}'
           include: '.*/package.json'
       - name: Build Packages
         run: yarn affected:build --prod --all
