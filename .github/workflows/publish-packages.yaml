@@ -55,7 +55,7 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@raeffs'
       - name: Publish Packages to Github
-        run: yarn affected --target publish --all
+        run: yarn affected --target publish --all --args="--access public --tag latest"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Prepare Publish to NPM
@@ -64,6 +64,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: '@raeffs'
       - name: Publish Packages to NPM
-        run: yarn affected --target publish --all --args="--access public"
+        run: yarn affected --target publish --all --args="--access public --tag latest"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
