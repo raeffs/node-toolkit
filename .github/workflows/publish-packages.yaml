@@ -49,12 +49,21 @@ jobs:
         run: yarn affected:test
       - name: Lint Packages
         run: yarn affected:lint
-      - name: Prepare Publish
+      - name: Prepare Publish to Github
         uses: actions/setup-node@v1
         with:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@raeffs'
-      - name: Publish Packages
+      - name: Publish Packages to Github
         run: yarn affected --target publish --all
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Prepare Publish to NPM
+        uses: actions/setup-node@v1
+        with:
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@raeffs'
+      - name: Publish Packages to NPM
+        run: yarn affected --target publish --all --args="--access public"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
