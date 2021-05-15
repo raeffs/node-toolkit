@@ -7,7 +7,7 @@ on:
 
 env:
   RXJS_VERSION: 6.6.3
-  ANGULAR_VERSION: 11.2.13
+  ANGULAR_VERSION: 12.0.0
 
 jobs:
   publish_packages:

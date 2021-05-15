@@ -42,10 +42,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/core/color/src/**/*.ts",
-              "packages/core/color/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/core/color/src/**/*.ts", "packages/core/color/src/**/*.html"]
           }
         },
         "test": {
@@ -54,9 +51,7 @@
             "jestConfig": "packages/core/color/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/core/color"
-          ]
+          "outputs": ["coverage/packages/core/color"]
         },
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
@@ -87,10 +82,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/core/common/src/**/*.ts",
-              "packages/core/common/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/core/common/src/**/*.ts", "packages/core/common/src/**/*.html"]
           }
         },
         "test": {
@@ -99,9 +91,7 @@
             "jestConfig": "packages/core/common/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/core/common"
-          ]
+          "outputs": ["coverage/packages/core/common"]
         },
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
@@ -132,10 +122,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/core/data-source/src/**/*.ts",
-              "packages/core/data-source/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/core/data-source/src/**/*.ts", "packages/core/data-source/src/**/*.html"]
           }
         },
         "test": {
@@ -144,9 +131,7 @@
             "jestConfig": "packages/core/data-source/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/core/data-source"
-          ]
+          "outputs": ["coverage/packages/core/data-source"]
         },
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
@@ -177,10 +162,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/core/rxjs/src/**/*.ts",
-              "packages/core/rxjs/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/core/rxjs/src/**/*.ts", "packages/core/rxjs/src/**/*.html"]
           }
         },
         "test": {
@@ -189,9 +171,7 @@
             "jestConfig": "packages/core/rxjs/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/core/rxjs"
-          ]
+          "outputs": ["coverage/packages/core/rxjs"]
         },
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
@@ -222,10 +202,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/core/testing/src/**/*.ts",
-              "packages/core/testing/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/core/testing/src/**/*.ts", "packages/core/testing/src/**/*.html"]
           }
         },
         "test": {
@@ -234,9 +211,7 @@
             "jestConfig": "packages/core/testing/jest.config.js",
             "passWithNoTests": true
           },
-          "outputs": [
-            "coverage/packages/core/testing"
-          ]
+          "outputs": ["coverage/packages/core/testing"]
         },
         "publish": {
           "executor": "@nrwl/workspace:run-commands",
@@ -267,17 +242,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/angular/events/src/**/*.ts",
-              "packages/angular/events/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/angular/events/src/**/*.ts", "packages/angular/events/src/**/*.html"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/angular/events"
-          ],
+          "outputs": ["coverage/packages/angular/events"],
           "options": {
             "jestConfig": "packages/angular/events/jest.config.js",
             "passWithNoTests": true
@@ -312,17 +282,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/angular/rxjs/src/**/*.ts",
-              "packages/angular/rxjs/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/angular/rxjs/src/**/*.ts", "packages/angular/rxjs/src/**/*.html"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/angular/rxjs"
-          ],
+          "outputs": ["coverage/packages/angular/rxjs"],
           "options": {
             "jestConfig": "packages/angular/rxjs/jest.config.js",
             "passWithNoTests": true
@@ -357,17 +322,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/angular/router/src/**/*.ts",
-              "packages/angular/router/src/**/*.html"
-            ]
+            "lintFilePatterns": ["packages/angular/router/src/**/*.ts", "packages/angular/router/src/**/*.html"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/angular/router"
-          ],
+          "outputs": ["coverage/packages/angular/router"],
           "options": {
             "jestConfig": "packages/angular/router/jest.config.js",
             "passWithNoTests": true
